@@ -27,23 +27,25 @@
     }
 
     /* ===== FORCE SHOW AR BUTTON ===== */
-    model-viewer::part(default-ar-button) {
-      position: absolute;
-      bottom: 60px; /* vertical distance from bottom of the model container */
-      right: 30px;  /* horizontal distance from right edge */
-      background: #ffffff;
-      color: black;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      z-index: 9999;
-      cursor: pointer;
-    }
+  model-viewer::part(default-ar-button) {
+  position: absolute;
+  bottom: 100px;      /* push it up from the bottom */
+  left: 50%;          /* place it in the middle horizontally */
+  transform: translateX(-50%); /* make sure it's truly centered */
+  
+  background: #ffffff;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 9999;
+  cursor: pointer;
+}
 
     /* ===== HOTSPOT STYLES ===== */
     .hotspot {
