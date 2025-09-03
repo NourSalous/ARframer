@@ -27,11 +27,11 @@
     }
 
     /* ===== FORCE SHOW AR BUTTON ===== */
-  model-viewer::part(default-ar-button) {
+ model-viewer::part(default-ar-button) {
   position: absolute;
-  bottom: 100px;      
-  left: 50%;          
-  transform: translateX(70%); /* make sure it's truly centered */
+  bottom: 34px;           /* Move closer to bottom */
+  left: 50%;              /* Center horizontally */
+  transform: translate(-35%, 0); /* Center perfectly */
   background: #ffffff;
   color: black;
   border: 1px solid #ccc;
@@ -45,7 +45,6 @@
   z-index: 9999;
   cursor: pointer;
 }
-
     /* ===== HOTSPOT STYLES ===== */
     .hotspot {
       background: #67130c;
