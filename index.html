@@ -11,7 +11,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: transparent; /* fully transparent */
+      background: transparent;
       height: 100vh;
       font-family: "DM Sans", sans-serif;
     }
@@ -20,29 +20,30 @@
     model-viewer {
       width: 100vw;
       height: 100vh;
-      background-color: transparent; /* no background behind model */
+      background-color: transparent;
       cursor: grab;
       --poster-color: transparent;
     }
 
-    /* ===== AR BUTTON STYLES ===== */
-    model-viewer::part(default-ar-button) {
-      position: absolute;
-      bottom: 70px; /* back to original position */
-      right: 16px;
-      background: #ffffff;
-      color: black;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      z-index: 9999;
-      cursor: pointer;
-    }
+    /* ===== FORCE SHOW AR BUTTON ===== */
+ model-viewer::part(default-ar-button) {
+  position: absolute;
+  bottom: 70px; 
+  right: 16px;
+  background: #ffffff; 
+  color: black;        
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 9999;
+  cursor: pointer;
+}
+
 
     /* ===== HOTSPOT STYLES ===== */
     .hotspot {
@@ -160,3 +161,4 @@
   </script>
 </body>
 </html>
+
