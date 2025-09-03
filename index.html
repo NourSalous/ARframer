@@ -23,6 +23,26 @@
       background-color: transparent;
       cursor: grab;
       --poster-color: transparent;
+      position: relative; /* for positioning AR button */
+    }
+
+    /* ===== FORCE SHOW AR BUTTON ===== */
+    model-viewer::part(default-ar-button) {
+      position: absolute;
+      bottom: 60px; /* vertical distance from bottom of the model container */
+      right: 30px;  /* horizontal distance from right edge */
+      background: #ffffff;
+      color: black;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      z-index: 9999;
+      cursor: pointer;
     }
 
     /* ===== HOTSPOT STYLES ===== */
@@ -138,31 +158,6 @@
     document.querySelector("#hotspot-aorta").addEventListener("click", () => {
       focusOnPart("hotspot-aorta", "-10deg 40deg 1.5m", "0.01m 0.60m 0.03m");
     });
-
-    // ===== DYNAMIC AR BUTTON POSITION =====
-    function updateARButtonPosition() {
-      const arButton = viewer.shadowRoot.querySelector('button[slot="ar-button"]');
-      if (!arButton) return;
-
-      const rect = viewer.getBoundingClientRect();
-
-      // Position the button near the bottom-right of the model
-      const x = rect.right - rect.width * 0.15; // 15% from right
-      const y = rect.bottom - rect.height * 0.1; // 10% from bottom
-
-      arButton.style.position = "absolute";
-      arButton.style.left = `${x}px`;
-      arButton.style.top = `${y}px`;
-    }
-
-    // Initial placement
-    updateARButtonPosition();
-
-    // Update on resize
-    window.addEventListener("resize", updateARButtonPosition);
-
-    // Update on camera orbit changes
-    viewer.addEventListener("camera-change", updateARButtonPosition);
   </script>
 </body>
 </html>
