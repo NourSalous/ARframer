@@ -11,7 +11,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: #fff;
+      background: transparent; /* fully transparent */
       height: 100vh;
       font-family: "DM Sans", sans-serif;
     }
@@ -20,15 +20,15 @@
     model-viewer {
       width: 100vw;
       height: 100vh;
-      background-color: transparent; /* transparent background */
+      background-color: transparent; /* no background behind model */
       cursor: grab;
       --poster-color: transparent;
     }
 
-    /* ===== FORCE SHOW AR BUTTON ===== */
+    /* ===== AR BUTTON STYLES ===== */
     model-viewer::part(default-ar-button) {
       position: absolute;
-      bottom: 120px; /* moved higher (closer to model) */
+      bottom: 70px; /* back to original position */
       right: 16px;
       background: #ffffff;
       color: black;
